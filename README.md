@@ -1,4 +1,4 @@
-# SeaK Solutions — Website
+# SEAK Solutions — Website
 
 **Live at: [seaksolutions.dev](https://seaksolutions.dev)**
 
