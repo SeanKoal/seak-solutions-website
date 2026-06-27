@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — SEAK SOLUTIONS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="cursor:pointer;"><span class="dot"></span>SEAK<span class="mono" style="color:var(--sage)"> SOLUTIONS</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="homelab.html" tabindex="0">HOMELAB</a>
+    <a href="skills.html" tabindex="0">SKILLS</a>
+    <a href="photography.html" class="active" tabindex="0">PHOTOGRAPHY</a>
+    <a href="background.html" tabindex="0">BACKGROUND</a>
+    <a href="contact.html" tabindex="0">CONTACT</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="hero-eyebrow mono">PHOTOGRAPHY</div>
+  <h1>Coming soon.</h1>
+  <p>Competition work shot on a Canon R100, a small collection of older cameras, and a growing run with film. This page is still being built — check back soon.</p>
+</section>
+
+<footer>
+  <span>SEAK SOLUTIONS — served from Ironhide</span>
+  <span>photography — placeholder</span>
+</footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

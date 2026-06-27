@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background — SEAK SOLUTIONS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="cursor:pointer;"><span class="dot"></span>SEAK<span class="mono" style="color:var(--sage)"> SOLUTIONS</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="homelab.html" tabindex="0">HOMELAB</a>
+    <a href="skills.html" tabindex="0">SKILLS</a>
+    <a href="photography.html" tabindex="0">PHOTOGRAPHY</a>
+    <a href="background.html" class="active" tabindex="0">BACKGROUND</a>
+    <a href="contact.html" tabindex="0">CONTACT</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="hero-eyebrow mono">BACKGROUND</div>
+  <h1>How I actually got here.</h1>
+</section>
+
+<section class="story">
+  <p class="lede">I went to school for automotive engineering first. It didn't fit, and I didn't stick with it long — but looking back, that wasn't really a left turn so much as a wrong turn that got corrected.</p>
+
+  <p>What actually fit was always there. I grew up taking computers apart and putting them back together, usually worse than I found them at first. I hosted my own Minecraft servers as a kid, which meant learning networking and server management before I had a word for either one. A cybersecurity course in high school was the first time someone gave that instinct a name and a direction.</p>
+
+  <p>So when automotive engineering didn't work out, I didn't pivot — I just went back to what had been true the whole time. I'm now two semesters from a B.S. in Computer Programming and Information Science with a Cybersecurity minor at Farmingdale State College.</p>
+
+  <p>Right now, that means a full schedule: Assistant Store Manager at Vitamin Shoppe during the day, classes and certs (A+ now, Network+ and Security+ next) on top of that, and this homelab built in whatever time is left. I'm on Long Island, building all of it from here.</p>
+
+  <div class="pull-divider">// THE POINT OF ALL OF IT</div>
+
+  <p class="closing">None of it is for a piece of paper. I wanted to walk into IT or cybersecurity work with something real behind the certs — a network I built, broke, and fixed myself — not just a transcript. This site, and everything linked from it, is that proof.</p>
+</section>
+
+<div class="facts-rail">
+  <div class="fact">
+    <div class="fact-label mono">BASED IN</div>
+    <div class="fact-value">Long Island, NY</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label mono">CURRENTLY</div>
+    <div class="fact-value">Asst. Store Manager, Vitamin Shoppe</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label mono">STUDYING</div>
+    <div class="fact-value">B.S. CPIS, Cybersecurity Minor</div>
+  </div>
+  <div class="fact">
+    <div class="fact-label mono">GRADUATING</div>
+    <div class="fact-value">2 semesters out</div>
+  </div>
+</div>
+
+<footer>
+  <span>SEAK SOLUTIONS — served from Ironhide</span>
+  <span>background — v1.0</span>
+</footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homelab — SEAK SOLUTIONS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/homelab.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="cursor:pointer;"><span class="dot"></span>SEAK<span class="mono" style="color:var(--sage)"> SOLUTIONS</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="homelab.html" class="active" tabindex="0">HOMELAB</a>
+    <a href="skills.html" tabindex="0">SKILLS</a>
+    <a href="photography.html" tabindex="0">PHOTOGRAPHY</a>
+    <a href="background.html" tabindex="0">BACKGROUND</a>
+    <a href="contact.html" tabindex="0">CONTACT</a>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="hero-eyebrow mono">THE HOMELAB</div>
+  <h1>Built one host at a time.<br>Still running.</h1>
+  <p>Everything below actually happened, in order — starting with a thrifted case on a desk and ending with the page you're reading right now, served from a VM on that same machine.</p>
+</section>
+
+<section class="timeline">
+  <div class="spine"></div>
+
+  <div class="stop">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 01 — MAY 2026</div>
+    <h3>The host: Ironhide</h3>
+    <p>Started with a thrifted Fractal Torrent case and built up from secondhand parts — a Ryzen 5 3600, 32GB of DDR4, mixed storage drives, all sourced piece by piece. Proxmox went on as the hypervisor, turning one physical machine into a platform for everything that came after.</p>
+    <div class="stop-tags">
+      <span class="tag">PROXMOX VE</span>
+      <span class="tag">RYZEN 5 3600</span>
+      <span class="tag">SECONDHAND BUILD</span>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 02</div>
+    <h3>First VM: Ubuntu Server</h3>
+    <p>The first virtual machine went up — a clean Ubuntu Server install, reachable over SSH. Simple on purpose: prove the hypervisor works, prove a VM can be reached remotely, before adding anything more complicated.</p>
+    <div class="stop-tags">
+      <span class="tag">UBUNTU SERVER 24.04</span>
+      <span class="tag">SSH</span>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 03</div>
+    <h3>Kali Linux, with a desktop</h3>
+    <p>A Kali VM came next, set up for full remote desktop access rather than just a terminal — useful for the security side of the lab. Getting a graphical desktop to come up reliably over the network turned into its own project, but it now starts clean on boot every time.</p>
+    <div class="stop-tags">
+      <span class="tag">KALI LINUX 2026.1</span>
+      <span class="tag">VNC DESKTOP</span>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 04</div>
+    <h3>Real storage: TrueNAS SCALE</h3>
+    <p>A dedicated NAS VM with a physical drive passed straight through to it, formatted into a real storage pool. This is where the lab stopped being just compute and started being a place files actually live.</p>
+    <div class="stop-tags">
+      <span class="tag">TRUENAS SCALE</span>
+      <span class="tag">DISK PASSTHROUGH</span>
+      <span class="tag">~1.82TB POOL</span>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 05</div>
+    <h3>A network of its own</h3>
+    <p>Every machine and VM got tied together over Tailscale, and the whole lab moved onto its own isolated router and subnet — fully separate from the rest of the household network. From this point on, the lab could be reached securely from anywhere, not just from the same room.</p>
+    <div class="stop-tags">
+      <span class="tag">TAILSCALE MESH</span>
+      <span class="tag">ISOLATED SUBNET</span>
+      <span class="tag">REMOTE ACCESS</span>
+    </div>
+  </div>
+
+  <div class="stop final">
+    <div class="stop-node"></div>
+    <div class="stop-index mono">STOP 06 — NOW</div>
+    <h3>This website</h3>
+    <p>The newest thing on the network. Hand-coded, served by Nginx on the Ubuntu Server VM, and exposed to the public internet through a Cloudflare Tunnel — no open inbound ports on the router, just an encrypted outbound connection from the server itself. You're looking at the lab's latest tenant.</p>
+    <div class="stop-tags">
+      <span class="tag">NGINX</span>
+      <span class="tag">HAND-CODED</span>
+      <span class="tag">CLOUDFLARE TUNNEL</span>
+      <span class="tag">YOU ARE HERE</span>
+    </div>
+  </div>
+</section>
+
+<section class="diagram-section">
+  <div class="section-label">// THE MAP</div>
+  <h2>What it looks like end to end</h2>
+  <p>Same six stops, laid out as the network actually runs today.</p>
+
+  <div class="diagram-frame">
+    <svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#3D6B5C" stroke-width="1.5" fill="none" opacity="0.7">
+        <line x1="500" y1="90" x2="220" y2="190"/>
+        <line x1="500" y1="90" x2="500" y2="190"/>
+        <line x1="500" y1="90" x2="780" y2="190"/>
+        <line x1="220" y1="230" x2="500" y2="320"/>
+        <line x1="500" y1="230" x2="500" y2="320"/>
+        <line x1="780" y1="230" x2="500" y2="320"/>
+      </g>
+
+      <g stroke="#C77B4A" stroke-width="1.5" fill="none" opacity="0.85">
+        <line x1="220" y1="230" x2="220" y2="400"/>
+        <line x1="220" y1="400" x2="500" y2="400"/>
+      </g>
+
+      <g>
+        <rect x="410" y="40" width="180" height="50" rx="6" fill="#121814" stroke="#C77B4A" stroke-width="1.5"/>
+        <text x="500" y="62" text-anchor="middle" fill="#E8E6DE" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="15">Ironhide</text>
+        <text x="500" y="79" text-anchor="middle" fill="#9CA39C" font-family="JetBrains Mono, monospace" font-size="10">PROXMOX HOST</text>
+      </g>
+
+      <g>
+        <rect x="130" y="190" width="180" height="50" rx="6" fill="#121814" stroke="#3D6B5C" stroke-width="1.5"/>
+        <text x="220" y="212" text-anchor="middle" fill="#E8E6DE" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="14">Ubuntu Server</text>
+        <text x="220" y="229" text-anchor="middle" fill="#9CA39C" font-family="JetBrains Mono, monospace" font-size="10">SSH · NGINX</text>
+      </g>
+      <g>
+        <rect x="410" y="190" width="180" height="50" rx="6" fill="#121814" stroke="#3D6B5C" stroke-width="1.5"/>
+        <text x="500" y="212" text-anchor="middle" fill="#E8E6DE" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="14">Kali Linux</text>
+        <text x="500" y="229" text-anchor="middle" fill="#9CA39C" font-family="JetBrains Mono, monospace" font-size="10">VNC DESKTOP</text>
+      </g>
+      <g>
+        <rect x="690" y="190" width="180" height="50" rx="6" fill="#121814" stroke="#3D6B5C" stroke-width="1.5"/>
+        <text x="780" y="212" text-anchor="middle" fill="#E8E6DE" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="14">TrueNAS SCALE</text>
+        <text x="780" y="229" text-anchor="middle" fill="#9CA39C" font-family="JetBrains Mono, monospace" font-size="10">~1.82TB POOL</text>
+      </g>
+
+      <g>
+        <rect x="350" y="320" width="300" height="44" rx="6" fill="#0D1210" stroke="#5C9A82" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="500" y="347" text-anchor="middle" fill="#5C9A82" font-family="JetBrains Mono, monospace" font-size="12">TAILSCALE MESH · INTERNAL ONLY</text>
+      </g>
+
+      <g>
+        <rect x="60" y="380" width="160" height="40" rx="6" fill="#0D1210" stroke="#C77B4A" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="140" y="404" text-anchor="middle" fill="#C77B4A" font-family="JetBrains Mono, monospace" font-size="11">CLOUDFLARE TUNNEL</text>
+      </g>
+
+      <g>
+        <rect x="400" y="380" width="200" height="50" rx="6" fill="#121814" stroke="#C77B4A" stroke-width="2"/>
+        <text x="500" y="402" text-anchor="middle" fill="#E8E6DE" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="14">This Website</text>
+        <text x="500" y="419" text-anchor="middle" fill="#C77B4A" font-family="JetBrains Mono, monospace" font-size="10">PUBLIC · YOU ARE HERE</text>
+      </g>
+
+      <g>
+        <rect x="40" y="320" width="160" height="40" rx="6" fill="none" stroke="#6B7570" stroke-width="1.5"/>
+        <text x="120" y="344" text-anchor="middle" fill="#9CA39C" font-family="JetBrains Mono, monospace" font-size="11">PUBLIC INTERNET</text>
+      </g>
+      <line x1="120" y1="360" x2="140" y2="380" stroke="#C77B4A" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <p class="mono" style="font-size: 12px; color: var(--sage); max-width: 640px; margin-top: 24px;">No inbound ports opened on the router for this. The Ubuntu Server VM makes an outbound connection to Cloudflare; Cloudflare proxies public traffic to it through that tunnel. Everything else above — the VMs talking to each other, remote management — still stays on the private Tailscale mesh.</p>
+</section>
+
+<div class="github-callout">
+  <div>
+    <h3>Want the full build log?</h3>
+    <p>Every step above has a deeper writeup on GitHub — hardware specs, full configs, and the actual bugs fought to get here.</p>
+  </div>
+  <a href="https://github.com/SeanKoal/ironhide-homelab" class="btn btn-primary">VIEW ON GITHUB →</a>
+</div>
+
+<footer>
+  <span>SEAK SOLUTIONS — served from Ironhide</span>
+  <span>homelab — v1.0</span>
+</footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

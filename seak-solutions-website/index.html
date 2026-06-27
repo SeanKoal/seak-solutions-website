@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEAK SOLUTIONS — Sean Kollmeier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo" style="cursor:pointer;"><span class="dot"></span>SEAK<span class="mono" style="color:var(--sage)"> SOLUTIONS</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="homelab.html" tabindex="0">HOMELAB</a>
+    <a href="skills.html" tabindex="0">SKILLS</a>
+    <a href="photography.html" tabindex="0">PHOTOGRAPHY</a>
+    <a href="background.html" tabindex="0">BACKGROUND</a>
+    <a href="contact.html" tabindex="0">CONTACT</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow mono">SYSTEMS · NETWORKING · SECURITY</div>
+  <h1>Self-taught.<br>Self-hosted.<br>Self-<span class="accent">explanatory.</span></h1>
+  <div class="mono" style="font-size: 13px; color: var(--sage); margin-bottom: 24px; letter-spacing: 0.04em;">SEAK SOLUTIONS — BY SEAN KOLLMEIER</div>
+  <p class="lede">Assistant Store Manager. Student. And in whatever time's left, the person who built the network, the lab, and this site.</p>
+  <div class="hero-actions">
+    <a href="homelab.html" class="btn btn-primary">VIEW THE HOMELAB →</a>
+    <a href="contact.html" class="btn btn-ghost">GET IN TOUCH</a>
+  </div>
+  <div class="mono" style="font-size: 12px; color: var(--sage); margin-top: 20px;">Also available for IT setup &amp; troubleshooting help — <a href="contact.html" style="color: var(--pine-bright); text-decoration: underline;">see details →</a></div>
+</section>
+
+<div class="status-panel">
+  <div class="status-panel-header">
+    <span>ACTIVE HOSTS</span>
+    <span>4 ONLINE</span>
+  </div>
+  <div class="status-grid">
+    <div class="status-node">
+      <div class="status-node-top"><span class="status-led led-up"></span><span class="status-node-name">Ironhide</span></div>
+      <div class="status-node-role">Proxmox host — server</div>
+      <div class="status-node-detail">3 VMs · Tailscale mesh</div>
+    </div>
+    <div class="status-node">
+      <div class="status-node-top"><span class="status-led led-up"></span><span class="status-node-name">Magnus</span></div>
+      <div class="status-node-role">Desktop — workstation</div>
+      <div class="status-node-detail">Ryzen 7 · RTX 2060S</div>
+    </div>
+    <div class="status-node">
+      <div class="status-node-top"><span class="status-led led-up"></span><span class="status-node-name">Soundwave</span></div>
+      <div class="status-node-role">ThinkPad — mobile</div>
+      <div class="status-node-detail">T14 Gen 4</div>
+    </div>
+    <div class="status-node">
+      <div class="status-node-top"><span class="status-led led-idle"></span><span class="status-node-name">Hound</span></div>
+      <div class="status-node-role">2-in-1 — WoL agent</div>
+      <div class="status-node-detail">standby · battery-backed</div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-label">// 01 — WHAT'S HERE</div>
+  <h2>Three things, built with the same instinct.</h2>
+  <p class="section-intro">Infrastructure, security practice, and photography — different surfaces, but the same intent. Build it. Learn from it. Perfect it.</p>
+  <div class="topo-row">
+    <div class="topo-card">
+      <div class="num mono">HOMELAB</div>
+      <h3>Ironhide</h3>
+      <p>A self-hosted Proxmox lab — Ubuntu, Kali, TrueNAS, all meshed over Tailscale. Built from secondhand parts, documented from the ground up.</p>
+    </div>
+    <div class="topo-card">
+      <div class="num mono">SECURITY</div>
+      <h3>Hands-on practice</h3>
+      <p>A+ / Network+ / Security+ in progress, applied directly — hardening this very site, network scanning, CTF-style exercises on Kali.</p>
+    </div>
+    <div class="topo-card">
+      <div class="num mono">PHOTOGRAPHY</div>
+      <h3>Behind the lens</h3>
+      <p>Competition photography shot and edited on a Canon R100, plus a growing run with film and older formats. Same eye for detail, different kind of system.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>SEAK SOLUTIONS — served from Ironhide</span>
+  <span>v1.0</span>
+</footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+  }
+</script>
+</body>
+</html>

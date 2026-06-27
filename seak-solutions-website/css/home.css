@@ -1,0 +1,106 @@
+/* ---------- SYSTEM STATUS SIGNATURE ---------- */
+.status-panel {
+  margin: 0 48px 100px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-raised);
+  overflow: hidden;
+}
+
+.status-panel-header {
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--ink-dim);
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.status-node {
+  padding: 22px 24px;
+  border-right: 1px solid var(--line);
+}
+.status-node:last-child { border-right: none; }
+
+.status-node-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.status-led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.led-up { background: var(--pine-bright); box-shadow: 0 0 6px var(--pine-bright); }
+.led-idle { background: var(--copper); box-shadow: 0 0 6px var(--copper); }
+
+.status-node-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.status-node-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-dim);
+  margin-bottom: 4px;
+}
+
+.status-node-detail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--sage);
+}
+
+/* ---------- TOPOLOGY/PILLAR CARDS ---------- */
+.topo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.topo-card {
+  background: var(--bg-raised);
+  padding: 28px;
+}
+
+.topo-card .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+
+.topo-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.topo-card p {
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+
+@media (max-width: 700px) {
+  .status-panel, .section { margin-left: 0; margin-right: 0; padding-left: 20px; padding-right: 20px; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+  .status-node:nth-child(2) { border-right: none; }
+  .topo-row { grid-template-columns: 1fr; }
+}
